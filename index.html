@@ -6,8 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<meta content="ie=edge" http-equiv="X-UA-Compatible">
 	<link href="css/style.css" rel="stylesheet">
-	<title>Weather App</title>
-<!--	<author>Fernando Rosa</author>-->
+	<title>Weather App</title><!--    <author>Fernando Rosa</author>-->
 </head>
 <body>
 	<div class='box foo' id="button" onclick="switchW()"></div>
@@ -17,6 +16,9 @@
 	<div id="tempCo">
 		<div id="tempCircle">
 			<p id="temp"></p>
+			<div id="zipCodeButton">
+				<input id="zipCodeInput" pattern="[0-9]{5}" placeholder="Zip Code" required="" title="Five digit zip code" type="text"><button id="zipCode" onclick="getWeatherByZip()">&#187;</button>
+			</div>
 		</div>
 		<div id="descDiv">
 			<p id="desc"></p>

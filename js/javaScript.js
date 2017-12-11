@@ -35,7 +35,35 @@ function getWeather(lat, lon) {
 			icon = result.weather[0].icon;
 			$('#icon').attr('src', iconUrl + icon + '.png');
 			$("#button").html(String.fromCharCode(176) + "F");
-			setInterval(function() {getTime();}, 100);
+			setInterval(function() {
+				getTime();
+			}, 100);
+			getWallpaper(icon);
+		}
+	});
+}
+//Zip code function
+function getWeatherByZip() {
+	var zip = document.getElementById("zipCodeInput").value;
+	var apiKey = "&units=metric&appid=a8a07d1c8f6d3a0fd02ba7ad0a345960";
+	var urlString = api + "zip=" + zip + ",us" + apiKey;
+	var iconUrl = "http://openweathermap.org/img/w/";
+	var icon;
+	$.ajax({
+		url: urlString,
+		success: function(result) {
+			$("#city").text(result.name + ", " + result.sys.country);
+			tempInCelsius = Math.round(result.main.temp);
+			minTempInCelsius = Math.round(result.main.temp_min * 10) / 10;
+			maxTempInCelsius = Math.round(result.main.temp_max * 10) / 10;
+			getCelsiusWeather();
+			$("#desc").html(result.weather[0].main);
+			icon = result.weather[0].icon;
+			$('#icon').attr('src', iconUrl + icon + '.png');
+			$("#button").html(String.fromCharCode(176) + "F");
+			setInterval(function() {
+				getTime();
+			}, 100);
 			getWallpaper(icon);
 		}
 	});
@@ -67,7 +95,7 @@ function getCelsiusWeather() {
 	$("#maxTemp").fadeOut(function() {
 		$(this).text("Maximal Temp: " + maxTempInCelsius + " " + String.fromCharCode(176) + "C")
 	}).fadeIn(600);
-    $("#button").html(String.fromCharCode(176) + "F");
+	$("#button").html(String.fromCharCode(176) + "F");
 }
 //This function gets the time from the browser
 function getTime() {
