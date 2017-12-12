@@ -18,7 +18,6 @@ body {
 	height: 600px;
 	background-color: #8BC34A;
 	border: 5px solid white;
-	/*	border-radius: 7px;*/
 	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
 	font-family: 'Raleway', sans-serif;
 	opacity: 0.8;
@@ -35,6 +34,7 @@ h2 {
 p {
 	text-align: center;
 }
+/* The background circle */
 #tempCircle {
 	height: 300px;
 	width: 300px;
@@ -129,6 +129,7 @@ to {
 	width: 200px;
 	margin: 0 auto;
 }
+/* Min temp */
 #minTemp {
 	width: 6em;
 	word-wrap: break-word;
@@ -137,6 +138,7 @@ to {
 	float: left;
 	color: #2a2a2a;
 }
+/* Maximum temp */
 #maxTemp {
 	width: 6em;
 	word-wrap: break-word;
@@ -144,6 +146,7 @@ to {
 	float: right;
 	color: #2a2a2a;
 }
+/* Change temperature styling */
 .box {
 	position: absolute;
 	vertical-align: middle;
@@ -187,6 +190,7 @@ to {
 .box:hover::after, .box:hover::before {
 	-webkit-transform: scale(1);
 }
+/* Zip code input styling */
 input[type=text] {
 	width: 90px;
 	border: none;
